@@ -1,5 +1,6 @@
 import sys
 import logging
+import pandas as pd
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QDialog
 from PyQt5.QtCore import QBasicTimer, QThread, pyqtSignal
 
@@ -65,7 +66,7 @@ class Compress(QDialog):
 
     def timerEvent(self, event):
         if self.mode == 0:
-            if self.step > 30:
+            if self.step > 60:
                 self.timer.stop()
                 return
             self.step = self.step + 0.2
@@ -115,7 +116,7 @@ class CompressThread(QThread):
             data, miss_rate, exceed_rate, jump_rate = evaluateAndClean(range_limit, data, avg_policy)
             self.log_signal.emit("缺失率：{0}, 跳变率: {1}, 越界率: {2}".format(miss_rate, jump_rate, exceed_rate))
             self.row_signal.emit(len(data))
-            self.progress_signal.emit(30)
+            self.progress_signal.emit(60)
             self.mode_signal.emit(1)
             self.log_signal.emit("开始压缩......")
             out_path = "C:/Users/Konfuse/Desktop/" + (self.path.split('/')[-1]).split('.')[0] + ".zlib"
@@ -180,6 +181,7 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     logging.basicConfig(filename='logger.log', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                         level=logging.INFO)
+    pd.set_option('display.float_format', lambda x: '%.5f' % x)
     ###
     home_window = Home()
     compress_window = Compress()

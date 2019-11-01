@@ -17,6 +17,7 @@ def Data_compress(df, out_path, level=-1):
     # level，int，压缩率，-1至9,0为最低（不压缩），9为最高，-1为适中（5或6）
     start = time.time()
     print("Start compressing...")
+    pd.set_option('display.float_format', lambda x: '%.5f' % x)
     string_data = df.to_string()
     bytes_data = bytes(string_data, encoding='utf-8')
     compress_data = zlib.compress(bytes_data, level)
@@ -44,7 +45,7 @@ def Data_decompress(input_path, output_path):
     array_data = np.array(list_data).reshape(-1, 36)
     columns_list = array_data[0]
     data = pd.DataFrame(array_data, columns=columns_list).drop(0).reset_index(drop=True)
-    data.to_excel(output_path, index=None, header=None)
+    data.to_excel(output_path, index=None)
     end = time.time()
     print('Finish decompressing...elapsed time:    ', asMinutes(end - start))
     return data
