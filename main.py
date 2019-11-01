@@ -9,7 +9,7 @@ from dcmp.compress import *
 from dcmp.discompress import *
 from db.read_data import read_data
 from cleantool.evaluateAndClean import evaluateAndClean, ModifyRangeLimit, averagePolicy
-from decompress.Data_de_compress import Data_compress, Data_decompress
+from decompress.data_de_compress import Data_compress, Data_decompress
 
 
 class Compress(QDialog):
@@ -181,12 +181,12 @@ if __name__ == "__main__":
     logging.basicConfig(filename='logger.log', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                         level=logging.INFO)
     ###
-    homewindow = Home()
-    compresswindow = Compress()
-    discompresswindow = Discompress()
-    btn_compress = homewindow.main_ui.compress
-    btn_compress.clicked.connect(compresswindow.show)
-    btn_discompress = homewindow.main_ui.discompress
-    btn_discompress.clicked.connect(discompresswindow.show)
-    homewindow.show()
+    home_window = Home()
+    compress_window = Compress()
+    discompress_window = Discompress()
+    btn_compress = home_window.main_ui.compress
+    btn_compress.clicked.connect(compress_window.show)
+    btn_discompress = home_window.main_ui.discompress
+    btn_discompress.clicked.connect(discompress_window.show)
+    home_window.show()
     sys.exit(app.exec_())
