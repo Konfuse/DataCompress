@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EvaluateUI</class>
+ <widget class="QDialog" name="EvaluateUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>703</width>
+    <height>767</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Adobe Devanagari</family>
+   </font>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::TabFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>评估界面</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(245, 245, 245);</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>440</y>
+     <width>121</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::TabFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>请选择维度：</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="dis_picture">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>480</y>
+     <width>711</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(226, 226, 226);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="index_tab">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>300</y>
+     <width>671</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="showGrid">
+    <bool>true</bool>
+   </property>
+   <attribute name="horizontalHeaderVisible">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>95</number>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderMinimumSectionSize">
+    <number>21</number>
+   </attribute>
+   <attribute name="verticalHeaderDefaultSectionSize">
+    <number>40</number>
+   </attribute>
+   <attribute name="verticalHeaderHighlightSections">
+    <bool>true</bool>
+   </attribute>
+   <row>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string>元素缺失率</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>记录缺失率</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>时间违法率</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>数据越界率</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>离群值率</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>毛刺异常率</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>等级偏移率</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QRadioButton" name="radio_pre">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>450</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>压强</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>11</width>
+     <height>11</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radio_tem">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>450</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>温度</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radio_moi">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>450</y>
+     <width>51</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>湿度</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radio_fli">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>450</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>闪烁指数</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radio_TEC">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>450</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TEC</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>430</y>
+     <width>661</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>260</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>评估指标：</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="file_info">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>671</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="lineWidth">
+    <number>3</number>
+   </property>
+   <property name="sizeAdjustPolicy">
+    <enum>QAbstractScrollArea::AdjustToContents</enum>
+   </property>
+   <property name="showGrid">
+    <bool>false</bool>
+   </property>
+   <property name="rowCount">
+    <number>0</number>
+   </property>
+   <attribute name="horizontalHeaderVisible">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderMinimumSectionSize">
+    <number>28</number>
+   </attribute>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>167</number>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderMinimumSectionSize">
+    <number>37</number>
+   </attribute>
+   <attribute name="verticalHeaderDefaultSectionSize">
+    <number>45</number>
+   </attribute>
+   <column>
+    <property name="text">
+     <string>名称</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>大小</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>路径</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>修改时间</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="scan_file">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>220</y>
+     <width>93</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(32, 140, 255);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>添加</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="delete_file">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>220</y>
+     <width>93</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(32, 140, 255);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>删除</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>250</y>
+     <width>661</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="comfirm_evaluate">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>400</y>
+     <width>93</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(32, 140, 255);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>确定评估</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancel_evaluate">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>400</y>
+     <width>93</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <pointsize>10</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(32, 140, 255);
+color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>取消评估</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Adobe Devanagari</family>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(0, 0, 0);</string>
+   </property>
+   <property name="text">
+    <string>选择评估文件：</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>701</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(32, 140, 255);</string>
+   </property>
+   <widget class="QPushButton" name="btn_com">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>0</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adobe Devanagari</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:100px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../../Compress/DataCompress/dcmp/picture.qrc">
+      <normaloff>:/image/10.png</normaloff>:/image/10.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_dis">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>0</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adobe Devanagari</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:100px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../../Compress/DataCompress/dcmp/picture.qrc">
+      <normaloff>:/image/11.png</normaloff>:/image/11.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_eva">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>0</y>
+      <width>61</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adobe Devanagari</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:100px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../../../Compress/DataCompress/dcmp/picture.qrc">
+      <normaloff>:/image/12.png</normaloff>:/image/12.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adobe Devanagari</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background：transparent；</string>
+    </property>
+    <property name="text">
+     <string>  压缩文件</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>50</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adobe Devanagari</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background：transparent；</string>
+    </property>
+    <property name="text">
+     <string>解压缩文件</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>50</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Adobe Devanagari</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background：transparent；</string>
+    </property>
+    <property name="text">
+     <string>  质量评估</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../../../Compress/DataCompress/dcmp/picture.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>scan_file</sender>
+   <signal>clicked()</signal>
+   <receiver>EvaluateUI</receiver>
+   <slot>select_evafile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>494</x>
+     <y>251</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>464</x>
+     <y>231</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>delete_file</sender>
+   <signal>clicked()</signal>
+   <receiver>EvaluateUI</receiver>
+   <slot>delete_evafile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>622</x>
+     <y>251</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>595</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radio_pre</sender>
+   <signal>clicked()</signal>
+   <receiver>EvaluateUI</receiver>
+   <slot>handle_type()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>178</x>
+     <y>469</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>42</x>
+     <y>347</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radio_tem</sender>
+   <signal>clicked()</signal>
+   <receiver>EvaluateUI</receiver>
+   <slot>handle_type()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>260</x>
+     <y>469</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>212</x>
+     <y>328</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radio_moi</sender>
+   <signal>clicked()</signal>
+   <receiver>EvaluateUI</receiver>
+   <slot>handle_type()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>310</x>
+     <y>469</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>22</x>
+     <y>438</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radio_TEC</sender>
+   <signal>clicked()</signal>
+   <receiver>EvaluateUI</receiver>
+   <slot>handle_type()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>382</x>
+     <y>469</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>228</x>
+     <y>520</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radio_fli</sender>
+   <signal>clicked()</signal>
+   <receiver>EvaluateUI</receiver>
+   <slot>handle_type()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>493</x>
+     <y>469</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>118</x>
+     <y>558</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>comfirm_evaluate</sender>
+   <signal>clicked()</signal>
+   <receiver>EvaluateUI</receiver>
+   <slot>comfirm_evaluate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>456</x>
+     <y>415</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>363</x>
+     <y>364</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cancel_evaluate</sender>
+   <signal>clicked()</signal>
+   <receiver>EvaluateUI</receiver>
+   <slot>cancel_evaluate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>599</x>
+     <y>415</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>651</x>
+     <y>344</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_com</sender>
+   <signal>clicked()</signal>
+   <receiver>EvaluateUI</receiver>
+   <slot>to_comUI()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>52</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>220</x>
+     <y>98</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_dis</sender>
+   <signal>clicked()</signal>
+   <receiver>EvaluateUI</receiver>
+   <slot>to_decomUI()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>159</x>
+     <y>34</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>396</x>
+     <y>99</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>select_evafile()</slot>
+  <slot>comfirm_evaluate()</slot>
+  <slot>cancel_evaluate()</slot>
+  <slot>display_result()</slot>
+  <slot>handle_type()</slot>
+  <slot>handle_moon()</slot>
+  <slot>delete_evafile()</slot>
+  <slot>to_comUI()</slot>
+  <slot>to_decomUI()</slot>
+  <slot>to_evaUI()</slot>
+ </slots>
+</ui>

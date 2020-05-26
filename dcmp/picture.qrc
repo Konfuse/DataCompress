@@ -1,0 +1,14 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource>
+        <file alias="../image/1.jpg">../image/1.jpg</file>
+        <file alias="../image/2.jpg">../image/2.jpg</file>
+        <file alias="../image/3.jpg">../image/3.jpg</file>
+        <file alias="../image/7.png">../image/7.png</file>
+        <file alias="../image/8.png">../image/8.png</file>
+        <file alias="../image/9.png">../image/9.png</file>
+        <file alias="../image/10.png">../image/10.png</file>
+        <file alias="../image/11.png">../image/11.png</file>
+        <file alias="../image/12.png">../image/12.png</file>
+    </qresource>
+</RCC>
